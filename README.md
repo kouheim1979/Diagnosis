@@ -7,6 +7,6 @@
 - ADHD関連9問・ストレス8問・感受性8問・ビッグファイブ風15問・16通りの対話スタイル12問：既存MediScopeの独自質問を独立画面に整理。
 - Business向けDISCは [kouheim1979/business](https://github.com/kouheim1979/business/tree/main/disc) に分離。
 
-医療診断、障害の有無・確率・重症度を判定する医療機器・認定心理検査ではありません。全ページは静的HTML・JavaScriptです。外部への回答送信はありません。
+医療診断、障害の有無・確率・重症度を判定する医療機器・認定心理検査ではありません。全アプリはサイコパス傾向チェックと同じ1問ずつ進む単体HTML形式で、静的HTML・JavaScriptのみです。外部への回答送信はありません。
 
 トップページ（GitHub Pages有効時）：https://kouheim1979.github.io/Diagnosis/
