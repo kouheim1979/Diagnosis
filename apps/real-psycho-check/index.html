@@ -63,7 +63,8 @@ p{margin:0 0 12px;max-width:62ch}
 .opts{display:grid;gap:8px}
 .opt{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:center;text-align:left;width:100%;
   border:1px solid var(--rule);background:var(--sheet);color:var(--ink);font:15px var(--f-body);padding:12px 14px;border-radius:3px;cursor:pointer}
-.opt:hover{border-color:var(--accent)}
+@media (hover:hover){.opt:hover{border-color:var(--accent)}}
+.opt{-webkit-tap-highlight-color:transparent}
 .opt .k{font-family:var(--f-mono);font-size:12px;width:24px;height:24px;display:grid;place-items:center;border:1px solid var(--rule);border-radius:50%;color:var(--ink-2)}
 .opt[aria-pressed="true"]{border-color:var(--accent);background:var(--hi)}
 .opt[aria-pressed="true"] .k{background:var(--accent);border-color:var(--accent);color:var(--sheet)}
@@ -180,6 +181,7 @@ function start(){
 }
 
 function question(){
+  if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
   const [ax,text]=Q[idx], done=ans.filter(v=>v!==null).length;
   view.innerHTML = `
     <div class="prog"><span>Q ${String(idx+1).padStart(2,"0")} / ${Q.length}</span><span>回答済 ${done}</span></div>

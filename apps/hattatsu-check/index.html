@@ -65,7 +65,8 @@ button{font-family:inherit;cursor:pointer}
 .qtext{font-size:clamp(18px,4.8vw,21px);font-weight:700;line-height:1.6;margin:10px 0 18px;text-wrap:pretty}
 .opts{display:flex;flex-direction:column;gap:8px}
 .opt{display:flex;align-items:center;gap:12px;text-align:left;background:transparent;border:1px solid var(--rule);border-radius:6px;color:var(--ink);font-size:15px;padding:12px 14px;transition:border-color .15s,background .15s}
-.opt:hover{border-color:var(--accent)}
+@media (hover:hover){.opt:hover{border-color:var(--accent)}}
+.opt{-webkit-tap-highlight-color:transparent}
 .opt.on{border-color:var(--accent);background:var(--accent-soft)}
 .opt .dot{width:18px;height:18px;flex:none;border-radius:50%;border:2px solid var(--rule)}
 .opt.on .dot{border-color:var(--accent);background:radial-gradient(circle,var(--accent) 45%,transparent 50%)}
@@ -235,6 +236,7 @@ $("back").onclick = () => { if(cur>0){ cur--; render(); } };
 $("retry").onclick = () => { $("agree").checked = false; $("start").disabled = true; show("intro"); };
 
 function render(){
+  if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
   const st = steps[cur];
   let sect, text, opts;
   if(st.kind==="item"){ const it = ITEMS[st.i]; sect = SUB[it[1]]; text = it[2]; opts = FREQ; }
