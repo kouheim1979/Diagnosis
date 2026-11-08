@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141a1c" media="(prefers-color-scheme: dark)">
-<meta name="description" content="リアルサイコパス診断と発達特性セルフチェック。自分の傾向を落ち着いて振り返るための、2つのオリジナル診断アプリ。">
+<meta name="description" content="リアルサイコパス診断と、大人・子どもの発達特性チェック。自分や家族の傾向を落ち着いて振り返るための、オリジナル診断アプリ集。">
 <title>MediScope｜診断アプリ集</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,13 +53,13 @@ h1{font-family:"BIZ UDPMincho",serif;font-weight:700;font-size:clamp(32px,6vw,54
 
 /* files */
 .files-head{display:flex;justify-content:space-between;align-items:baseline;padding:28px 0 16px;font-size:11px;color:var(--faint)}
-.files{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.files{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .file{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);text-decoration:none;position:relative;transition:transform .18s ease,border-color .18s ease}
 .file:hover{transform:translateY(-3px);border-color:var(--sub)}
 .file-tab{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line);font-size:11px;color:var(--faint)}
 .file-tab .cat{color:var(--tone);font-weight:500}
 .file-body{padding:26px 22px 22px;display:flex;flex-direction:column;flex:1}
-.file h2{font-family:"BIZ UDPMincho",serif;font-size:clamp(24px,3.4vw,30px);font-weight:700;line-height:1.35;margin:0 0 12px;letter-spacing:.01em}
+.file h2{font-family:"BIZ UDPMincho",serif;font-size:clamp(22px,1.9vw,23px);text-wrap:balance;font-weight:700;line-height:1.35;margin:0 0 12px;letter-spacing:.01em}
 .file p.desc{margin:0 0 22px;color:var(--sub);font-size:14px}
 .axes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
 .axes li{background:var(--tone-soft);color:var(--tone);font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:3px}
@@ -73,6 +73,7 @@ h1{font-family:"BIZ UDPMincho",serif;font-weight:700;font-size:clamp(32px,6vw,54
 .file:hover .arrow{transform:translateX(3px)}
 .f-psy{--tone:var(--ink);--tone-soft:color-mix(in srgb,var(--ink) 8%,transparent)}
 .f-dev{--tone:var(--accent);--tone-soft:var(--accent-soft)}
+.f-kid{--tone:var(--warm);--tone-soft:var(--warm-soft)}
 
 /* notes */
 .notes{display:grid;grid-template-columns:1fr 2fr;gap:32px;margin:56px 0 0;padding:28px 0;border-top:1px solid var(--line)}
@@ -107,16 +108,16 @@ footer{border-top:1px solid var(--line);padding:22px 0 max(28px,env(safe-area-in
 
   <section class="intro">
     <div>
-      <p class="kicker mono">2 FILES · ORIGINAL QUESTIONNAIRES</p>
+      <p class="kicker mono">3 FILES · ORIGINAL QUESTIONNAIRES</p>
       <h1>自分の傾向を、<br>静かに確かめる。</h1>
     </div>
     <div>
-      <p class="lead">対人スタイルや衝動性、日常の「やりにくさ」の背景にある特性。気になっていることを、2つのセルフチェックで落ち着いて振り返れます。</p>
+      <p class="lead">対人スタイルや衝動性、日常の「やりにくさ」の背景にある特性。自分のこと、お子さんのこと。気になっていることを、セルフチェックで落ち着いて振り返れます。</p>
       <div class="meta mono"><span>NO SIGN-UP</span><span>NO DATA SENT</span><span>JA</span></div>
     </div>
   </section>
 
-  <div class="files-head mono"><span>INDEX</span><span>02 ENTRIES</span></div>
+  <div class="files-head mono"><span>INDEX</span><span>03 ENTRIES</span></div>
 
   <main class="files">
     <a class="file f-psy" href="./apps/real-psycho-check/">
@@ -150,12 +151,27 @@ footer{border-top:1px solid var(--line);padding:22px 0 max(28px,env(safe-area-in
         <span class="go">チェックを始める<span class="arrow" aria-hidden="true">→</span></span>
       </div>
     </a>
+    <a class="file f-kid" href="./apps/hattatsu-check-kids/">
+      <div class="file-tab mono"><span>No.03</span><span class="cat">FOR PARENTS</span></div>
+      <div class="file-body">
+        <h2>子どもの発達特性チェック</h2>
+        <p class="desc">ふだんのお子さんの様子で気になることを、保護者が答えて整理する簡易チェック。大人用と同じくDSM-5の領域をもとにしたオリジナル26問で、園・学校と家庭での様子もふまえて振り返ります。</p>
+        <ul class="axes" aria-label="みる特性"><li>ASD</li><li>ADHD</li></ul>
+        <dl class="spec">
+          <div><dt>設問</dt><dd>26問</dd></div>
+          <div><dt>所要</dt><dd>約5分</dd></div>
+          <div><dt>回答</dt><dd>保護者</dd></div>
+          <div><dt>対象</dt><dd>3〜12歳</dd></div>
+        </dl>
+        <span class="go">チェックを始める<span class="arrow" aria-hidden="true">→</span></span>
+      </div>
+    </a>
   </main>
 
   <section class="notes" aria-labelledby="notes-title">
     <h3 id="notes-title">ご利用の前に</h3>
     <ul>
-      <li data-n="01"><span><strong>診断ではありません。</strong>どちらもオリジナルの設問で、標準化された心理検査や医師による診断ではありません。結果は傾向の目安です。</span></li>
+      <li data-n="01"><span><strong>診断ではありません。</strong>いずれもオリジナルの設問で、標準化された心理検査や医師による診断ではありません。結果は傾向の目安です。</span></li>
       <li data-n="02"><span><strong>回答は送信されません。</strong>集計はすべてお使いの端末の中で行われます。</span></li>
       <li data-n="03"><span><strong>困りごとが続くときは専門家へ。</strong>結果にかかわらず、気になることがあれば医療機関や相談窓口に相談してください。</span></li>
       <li data-n="04"><span>ビジネス向けのDISCは<a href="https://github.com/kouheim1979/business/tree/main/disc">別サイト</a>に分けています。</span></li>
