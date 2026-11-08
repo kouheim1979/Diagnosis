@@ -1,50 +1,85 @@
 <!doctype html>
 <html lang="ja">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Chroma Sort</title>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087e87">
+<meta name="description" content="MediScope（メディスコープ）｜ADHD・ASDのセルフチェック、心理テスト、性格診断のリンク集">
+<title>MediScope｜心理・性格・セルフチェックのポータル</title>
 <style>
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050a1d;color:#eaf2ff;font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans',sans-serif}
-#appframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#050a1d}
-#msg{position:fixed;left:8px;right:8px;bottom:8px;z-index:99999;background:#300;color:#fff;border:1px solid #f66;border-radius:10px;padding:10px;font-size:12px;white-space:pre-wrap;display:none}
+:root{--ink:#17343c;--muted:#647d85;--main:#087e87;--bg:#f5faf9;--border:#dcebe8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.65}
+a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #56bdc2;outline-offset:3px}
+.container{max-width:1100px;margin:auto;width:calc(100% - 34px)}
+.top{position:sticky;top:0;z-index:10;background:#ffffffed;border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:22px;letter-spacing:-.8px;font-weight:900}
+.brand-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--main);color:#fff;font-size:23px}
+.brand small{display:block;font-size:10px;letter-spacing:1.2px;color:var(--muted);line-height:1.1}.navlink{font-size:12px;color:var(--main);border:1px solid #badfda;border-radius:40px;padding:8px 14px;text-decoration:none;font-weight:900}
+.hero{padding:29px 0 28px}.hero-inner{background:linear-gradient(116deg,#076872 2%,#0a9398 71%,#54bab5);color:white;position:relative;overflow:hidden;border-radius:27px;min-height:335px;padding:50px clamp(25px,5vw,62px);display:flex;align-items:center;box-shadow:0 17px 39px #0b7c7c1f}
+.hero-text{z-index:1;position:relative;max-width:670px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:2px;color:#c0fff2;margin:0 0 17px}.hero h1{margin:0 0 18px;font-size:clamp(31px,5vw,53px);line-height:1.23;letter-spacing:-1px}.hero h1 span{color:#bdfce9}.hero p{max-width:560px;font-size:14px;color:#e7fcf8;margin:0 0 24px}
+.hero-btn{background:white;color:#08757c;border-radius:12px;text-decoration:none;font-size:14px;font-weight:900;padding:12px 20px;display:inline-block}.ring{position:absolute;border:1px solid #cefff6a3;border-radius:50%;width:370px;height:370px;right:-85px;top:-15px;opacity:.4}.ring:before,.ring:after{content:"";border:1px solid #cefff6;border-radius:50%;position:absolute}.ring:before{inset:48px}.ring:after{inset:105px}
+.topnote{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 25px}.topnote span{background:#e7f4f1;border-radius:50px;color:#47797b;font-size:12px;font-weight:800;padding:6px 13px}
+.section-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:19px}.section-head h2{font-size:25px;margin:0 0 4px}.section-head p,.count{color:var(--muted);font-size:13px;margin:0}.count{white-space:nowrap}
+.search{width:100%;border-radius:14px;border:1px solid #c8ddd9;background:white;font-size:15px;color:var(--ink);height:52px;padding:0 17px;margin-bottom:14px}
+.tabs{display:flex;gap:9px;overflow-x:auto;padding-bottom:18px;scrollbar-width:thin}.tab{border:1px solid var(--border);border-radius:50px;padding:8px 16px;background:white;color:#587780;white-space:nowrap;font-size:13px;font-weight:900}.tab[aria-pressed=true]{background:var(--main);color:white;border-color:var(--main)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{display:flex;flex-direction:column;min-height:240px;padding:22px;border-radius:19px;background:white;border:1px solid var(--border);box-shadow:0 10px 30px #174a5010}
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-bottom:16px}.icon{width:46px;height:46px;display:grid;place-items:center;font-size:24px;background:#e8f6f2;border-radius:13px}.tag{font-size:10px;font-weight:900;color:#40747a;background:#eaf4f3;padding:5px 10px;border-radius:30px}.tag.med{background:#edf0ff;color:#4659a0}.tag.ent{background:#fff2e8;color:#935728}
+.card h3{font-size:18px;line-height:1.45;margin:0 0 10px}.card p{font-size:13px;color:var(--muted);margin:0 0 12px;flex:1}.source{font-size:11px;color:#789098;margin-bottom:12px}
+.go{padding-top:12px;border-top:1px solid var(--border);display:block;font-size:13px;color:#087e87;font-weight:900;text-decoration:none}.go:hover{text-decoration:underline}
+.empty{grid-column:1/-1;background:white;border:1px dashed var(--border);border-radius:16px;padding:40px;text-align:center;color:var(--muted)}
+.notice{margin:30px auto 47px;background:white;border-radius:19px;border:1px solid var(--border);padding:24px 27px}.notice strong{font-size:15px}.notice p{font-size:13px;color:var(--muted);margin:5px 0 0}
+footer{border-top:1px solid var(--border);padding:25px 0 38px;color:#80979b;font-size:12px}
+@media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.nav{height:65px}.brand{font-size:21px}.hero{padding-top:19px}.hero-inner{border-radius:22px;padding:33px 24px;min-height:325px}.hero h1{font-size:32px}.ring{right:-245px}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:204px;padding:19px}.section-head h2{font-size:22px}.notice{padding:21px}}
 </style>
-<iframe id="appframe"></iframe>
-<pre id="msg"></pre>
+</head>
+<body>
+<header class="top"><nav class="container nav"><a href="#" class="brand"><span class="brand-icon">✧</span><span>MediScope<small>メディスコープ</small></span></a><a class="navlink" href="#library">診断一覧を見る ↓</a></nav></header>
+<main>
+<section class="hero"><div class="container"><div class="hero-inner"><div class="hero-text"><p class="eyebrow">PSYCHOLOGY &amp; SELF-DISCOVERY</p><h1>自分を知る、<br><span>新しい入り口。</span></h1><p>ADHD・ASDのセルフチェックから、サイコパシー傾向、ビッグファイブ、16タイプ性格診断まで。心理テストを「医療的なチェック」と「性格・娯楽」に分けて探せます。</p><a href="#library" class="hero-btn">診断・テストを探す ↗</a></div><div class="ring" aria-hidden="true"></div></div></div></section>
+<div class="container"><div class="topnote"><span>🧠 発達特性</span><span>💬 こころ</span><span>🔎 性格・行動</span><span>📖 出典・用途を明示</span></div>
+<section id="library"><div class="section-head"><div><h2>心理テスト＆セルフチェック</h2><p>クリックすると提供元のサイトに移動します。</p></div><span class="count" id="count"></span></div>
+<input id="search" class="search" type="search" autocomplete="off" aria-label="テストを検索" placeholder="キーワードで検索（ADHD、ASD、サイコパス、性格…）">
+<div class="tabs" id="tabs" aria-label="カテゴリー">
+<button class="tab" data-kind="all" aria-pressed="true">すべて</button><button class="tab" data-kind="development" aria-pressed="false">発達特性</button><button class="tab" data-kind="mental" aria-pressed="false">こころ・ストレス</button><button class="tab" data-kind="personality" aria-pressed="false">性格・行動</button><button class="tab" data-kind="sensory" aria-pressed="false">感受性</button>
+</div><div id="cards" class="cards" aria-live="polite"></div></section>
+<aside class="notice"><strong>⚠️ テスト結果について</strong><p>このサイトは第三者の心理テスト・セルフチェックへのリンク集で、診断そのものを行う医療サービスではありません。ADHD・ASDなどのスクリーニング結果だけで診断は確定できません。サイコパシーやHSPのオンラインテストも病名の判定には利用できません。困りごとが続く場合は医療機関などの専門家へ相談してください。外部サイトの利用条件や個人情報の取扱いは、それぞれの提供元をご確認ください。</p></aside>
+</div>
+</main><footer><div class="container">© MediScope · 個人制作の心理・性格テスト案内サイト ／ 特定の提供元との提携・監修関係はありません。</div></footer>
 <script>
-const msg=document.getElementById('msg');
-function show(t){msg.textContent=t;msg.style.display='block'}
-function injectMaster(html){
-  html=html.replaceAll('Chroma Sort Test','Chroma Sort');
-  html=html.replace("fetch('./index.html?test='+Date.now(),{cache:'no-store'})","fetch('./base.html?test='+Date.now(),{cache:'no-store'})");
-  html=html.replace("#sd.expert  {background:rgba(180,60,255,.24); color:#ddaaff}","#sd.expert  {background:rgba(180,60,255,.24); color:#ddaaff}\\n#sd.master  {background:rgba(255,70,190,.24); color:#ffb7ee}");
-  html=html.replace('<button class="gbtn" data-v="expert">EXPERT</button>','<button class="gbtn" data-v="expert">EXPERT</button>\\n        <button class="gbtn" data-v="master">MASTER</button>');
-  html=html.replace(`/* ボトル数は常に20本（カラー16本+空4本）、難易度は色数のみ変更 */
-const DC={
-  easy:  {c:4, b:16, e:4, sh:60},
-  normal:{c:8, b:16, e:4, sh:130},
-  hard:  {c:12,b:16, e:4, sh:230},
-  expert:{c:16,b:16, e:4, sh:380},
-};
-const DORD=['easy','normal','hard','expert'];`,`/* EXPERTまでは20本固定（カラー16本+空4本）、MASTERはカラー17本+空3本 */
-const DC={
-  easy:  {c:4, b:16, e:4, sh:60},
-  normal:{c:8, b:16, e:4, sh:130},
-  hard:  {c:12,b:16, e:4, sh:230},
-  expert:{c:16,b:16, e:4, sh:380},
-  master:{c:17,b:17, e:3, sh:520},
-};
-const DORD=['easy','normal','hard','expert','master'];`);
-  html=html.replace("static G='ws10testg';static S='ws10tests';","static G='ws11masterg';static S='ws11masters';");
-  html=html.replace("return{easy:'EASY',normal:'NORMAL',hard:'HARD',expert:'EXPERT'}[Stage.norm(d)]||'EASY';","return{easy:'EASY',normal:'NORMAL',hard:'HARD',expert:'EXPERT',master:'MASTER'}[Stage.norm(d)]||'EASY';");
-  html=html.replace("for(const [a,b] of Object.entries(colorRepls)) if(s.includes(a)) s=s.replace(a,b);","for(const [a,b] of Object.entries(colorRepls)) if(s.includes(a)) s=s.replace(a,b);\n  s=must(s,\"const CN=['red','blue','green','yellow','orange','cyan','purple','pink','gray','brown','lime','teal','cream','indigo','silver','lavender'];\",\"const CN=['red','blue','green','yellow','orange','cyan','purple','pink','gray','brown','lime','teal','cream','indigo','silver','lavender','black'];\",'CN master color');\n  s=must(s,\"  silver:  {bg:'linear-gradient(180deg,#aaccee,#7799bb)',gl:'#99bbdd',sym:'✦',light:true}, /* 冷色シルバー */\\n};\",\"  silver:  {bg:'linear-gradient(180deg,#aaccee,#7799bb)',gl:'#99bbdd',sym:'✦',light:true}, /* 冷色シルバー */\\n  black:   {bg:'linear-gradient(180deg,#333333,#050505)',gl:'#444444',sym:'♣',light:false}, /* MASTER追加色 */\\n};\",'CS master color');");
-  return html;
+"use strict";
+const tests=[
+{title:"ADHD 成人向けセルフチェック（ASRS）",kind:"development",icon:"🧩",label:"スクリーニング資料",level:"med",source:"Harvard Medical School / WHO関連資料",desc:"成人ADHDのスクリーニング尺度ASRSの原資料。英語版のPDF・解説を確認できます。検査のみで診断はできません。",url:"https://www.hcp.med.harvard.edu/ncs/asrs.php",words:"注意欠如 多動 集中 成人"},
+{title:"ASD 成人の評価とAQ-10",kind:"development",icon:"🔷",label:"診療ガイドライン",level:"med",source:"NICE（英国）",desc:"成人の自閉スペクトラム症の評価に関する公式ガイドライン。AQ-10を含む評価の位置づけを解説。英語。",url:"https://www.nice.org.uk/guidance/cg142/chapter/Recommendations",words:"自閉症 自閉スペクトラム 発達障害"},
+{title:"5分でできるストレスセルフチェック",kind:"mental",icon:"☁️",label:"公的セルフチェック",level:"med",source:"厚生労働省「こころの耳」",desc:"仕事や職場でのストレスについて振り返るためのツール。相談窓口の情報にもアクセスできます。",url:"https://kokoro.mhlw.go.jp/",words:"仕事 ストレス 心の健康 メンタル"},
+{title:"働く人の疲労蓄積度チェック",kind:"mental",icon:"🔋",label:"公的セルフチェック",level:"med",source:"厚生労働省",desc:"疲労の蓄積について振り返る公式のチェックリストを案内。",url:"https://www.mhlw.go.jp/stf/newpage_70718.html",words:"過労 働きすぎ 疲れ"},
+{title:"サイコパシー傾向テスト",kind:"personality",icon:"🎭",label:"心理・性格テスト",level:"ent",source:"IDRlabs（外部・日本語）",desc:"サイコパシー関連の性格傾向を自己申告で見る民間テスト。医学的な診断や他人へのレッテル貼りには使えません。",url:"https://www.idrlabs.com/jp/psychopathy-spectrum/test.php",words:"サイコパス 精神病質"},
+{title:"ビッグファイブ性格診断",kind:"personality",icon:"🌈",label:"性格テスト",level:"ent",source:"Big Five Personality Test",desc:"外向性・協調性・誠実性など5つの特性から性格を見つめるテスト。日本語・登録不要。",url:"https://bigfive-test.com/ja",words:"Big5 五因子 性格 特徴"},
+{title:"16タイプ性格診断",kind:"personality",icon:"✨",label:"性格テスト",level:"ent",source:"16Personalities（外部・日本語）",desc:"自己理解や対人関係のヒントを探す16タイプの診断。医療用検査ではありません。",url:"https://www.16personalities.com/ja/",words:"MBTI風 16personalities 性格タイプ"},
+{title:"HSP 感受性セルフテスト",kind:"sensory",icon:"🍃",label:"特性チェック",level:"ent",source:"The Highly Sensitive Person",desc:"感覚や刺激への敏感さを振り返るセルフテスト。英語。HSPは医学的な病名ではありません。",url:"https://hsperson.com/test/highly-sensitive-test/",words:"繊細 敏感 感受性"}
+];
+const labels={development:"発達特性",mental:"こころ・ストレス",personality:"性格・行動",sensory:"感受性"};
+const cards=document.getElementById("cards"),count=document.getElementById("count"),search=document.getElementById("search");
+let selected="all";
+function render(){
+const q=search.value.trim().toLocaleLowerCase();
+const shown=tests.filter(x=>(selected==="all"||x.kind===selected)&&[x.title,x.desc,x.source,x.words,labels[x.kind]].join(" ").toLocaleLowerCase().includes(q));
+count.textContent=shown.length+" 件";
+cards.replaceChildren();
+if(!shown.length){const el=document.createElement("div");el.className="empty";el.textContent="該当するテストがありません。キーワードを変えてお試しください。";cards.append(el);return}
+for(const x of shown){
+const card=document.createElement("article");card.className="card";
+const top=document.createElement("div");top.className="toprow";
+const icon=document.createElement("span");icon.className="icon";icon.textContent=x.icon;
+const tag=document.createElement("span");tag.className="tag "+x.level;tag.textContent=x.label;top.append(icon,tag);
+const h=document.createElement("h3");h.textContent=x.title;
+const p=document.createElement("p");p.textContent=x.desc;
+const source=document.createElement("div");source.className="source";source.textContent="提供元："+x.source;
+const a=document.createElement("a");a.className="go";a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="提供元サイトを見る ↗";
+card.append(top,h,p,source,a);cards.append(card)
 }
-(async()=>{
-  try{
-    const r=await fetch('./test.html?wrap='+Date.now(),{cache:'no-store'});
-    if(!r.ok)throw new Error('test.html fetch failed: '+r.status);
-    document.getElementById('appframe').srcdoc=injectMaster(await r.text());
-  }catch(e){show('起動エラー: '+e.message+'\n'+(e.stack||''));}
-})();
+}
+search.addEventListener("input",render);
+document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{selected=btn.dataset.kind;document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));render()}));
+render();
 </script>
-</html>
+</body></html>
