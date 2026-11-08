@@ -2,84 +2,80 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#087e87">
-<meta name="description" content="MediScope（メディスコープ）｜ADHD・ASDのセルフチェック、心理テスト、性格診断のリンク集">
-<title>MediScope｜心理・性格・セルフチェックのポータル</title>
+<meta name="theme-color" content="#086f76">
+<meta name="description" content="MediScope（メディスコープ）：独自の心理・性格セルフチェック。ADHD・ASDに関する困りごと、対人傾向、HSP、ストレス、ビッグファイブ、16タイプ風スタイル分析。">
+<title>MediScope｜オリジナル心理・性格セルフチェック</title>
 <style>
-:root{--ink:#17343c;--muted:#647d85;--main:#087e87;--bg:#f5faf9;--border:#dcebe8}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.65}
-a{color:inherit}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #56bdc2;outline-offset:3px}
-.container{max-width:1100px;margin:auto;width:calc(100% - 34px)}
-.top{position:sticky;top:0;z-index:10;background:#ffffffed;border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:22px;letter-spacing:-.8px;font-weight:900}
-.brand-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--main);color:#fff;font-size:23px}
-.brand small{display:block;font-size:10px;letter-spacing:1.2px;color:var(--muted);line-height:1.1}.navlink{font-size:12px;color:var(--main);border:1px solid #badfda;border-radius:40px;padding:8px 14px;text-decoration:none;font-weight:900}
-.hero{padding:29px 0 28px}.hero-inner{background:linear-gradient(116deg,#076872 2%,#0a9398 71%,#54bab5);color:white;position:relative;overflow:hidden;border-radius:27px;min-height:335px;padding:50px clamp(25px,5vw,62px);display:flex;align-items:center;box-shadow:0 17px 39px #0b7c7c1f}
-.hero-text{z-index:1;position:relative;max-width:670px}.eyebrow{font-size:11px;font-weight:900;letter-spacing:2px;color:#c0fff2;margin:0 0 17px}.hero h1{margin:0 0 18px;font-size:clamp(31px,5vw,53px);line-height:1.23;letter-spacing:-1px}.hero h1 span{color:#bdfce9}.hero p{max-width:560px;font-size:14px;color:#e7fcf8;margin:0 0 24px}
-.hero-btn{background:white;color:#08757c;border-radius:12px;text-decoration:none;font-size:14px;font-weight:900;padding:12px 20px;display:inline-block}.ring{position:absolute;border:1px solid #cefff6a3;border-radius:50%;width:370px;height:370px;right:-85px;top:-15px;opacity:.4}.ring:before,.ring:after{content:"";border:1px solid #cefff6;border-radius:50%;position:absolute}.ring:before{inset:48px}.ring:after{inset:105px}
-.topnote{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 25px}.topnote span{background:#e7f4f1;border-radius:50px;color:#47797b;font-size:12px;font-weight:800;padding:6px 13px}
-.section-head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:19px}.section-head h2{font-size:25px;margin:0 0 4px}.section-head p,.count{color:var(--muted);font-size:13px;margin:0}.count{white-space:nowrap}
-.search{width:100%;border-radius:14px;border:1px solid #c8ddd9;background:white;font-size:15px;color:var(--ink);height:52px;padding:0 17px;margin-bottom:14px}
-.tabs{display:flex;gap:9px;overflow-x:auto;padding-bottom:18px;scrollbar-width:thin}.tab{border:1px solid var(--border);border-radius:50px;padding:8px 16px;background:white;color:#587780;white-space:nowrap;font-size:13px;font-weight:900}.tab[aria-pressed=true]{background:var(--main);color:white;border-color:var(--main)}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{display:flex;flex-direction:column;min-height:240px;padding:22px;border-radius:19px;background:white;border:1px solid var(--border);box-shadow:0 10px 30px #174a5010}
-.toprow{display:flex;align-items:center;justify-content:space-between;gap:5px;margin-bottom:16px}.icon{width:46px;height:46px;display:grid;place-items:center;font-size:24px;background:#e8f6f2;border-radius:13px}.tag{font-size:10px;font-weight:900;color:#40747a;background:#eaf4f3;padding:5px 10px;border-radius:30px}.tag.med{background:#edf0ff;color:#4659a0}.tag.ent{background:#fff2e8;color:#935728}
-.card h3{font-size:18px;line-height:1.45;margin:0 0 10px}.card p{font-size:13px;color:var(--muted);margin:0 0 12px;flex:1}.source{font-size:11px;color:#789098;margin-bottom:12px}
-.go{padding-top:12px;border-top:1px solid var(--border);display:block;font-size:13px;color:#087e87;font-weight:900;text-decoration:none}.go:hover{text-decoration:underline}
-.empty{grid-column:1/-1;background:white;border:1px dashed var(--border);border-radius:16px;padding:40px;text-align:center;color:var(--muted)}
-.notice{margin:30px auto 47px;background:white;border-radius:19px;border:1px solid var(--border);padding:24px 27px}.notice strong{font-size:15px}.notice p{font-size:13px;color:var(--muted);margin:5px 0 0}
-footer{border-top:1px solid var(--border);padding:25px 0 38px;color:#80979b;font-size:12px}
-@media(max-width:840px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:590px){.nav{height:65px}.brand{font-size:21px}.hero{padding-top:19px}.hero-inner{border-radius:22px;padding:33px 24px;min-height:325px}.hero h1{font-size:32px}.ring{right:-245px}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:204px;padding:19px}.section-head h2{font-size:22px}.notice{padding:21px}}
+:root{--ink:#18383e;--muted:#687f88;--a:#087a80;--line:#d8e9e5;--bg:#f5faf9;--soft:#e8f6f3;--paper:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;color:var(--ink)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #72c8c0;outline-offset:3px}[hidden]{display:none!important}a{color:inherit}
+.wrap{width:calc(100% - 32px);max-width:1110px;margin:auto}
+header{position:sticky;top:0;background:#ffffffef;z-index:10;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:21px;font-weight:950;letter-spacing:-.6px}.brand i{display:grid;place-items:center;background:var(--a);color:#fff;border-radius:12px;width:41px;height:41px;font-size:23px;font-style:normal}.brand small{display:block;font-size:10px;line-height:1.2;color:var(--muted);letter-spacing:.5px}
+.nav a:last-child{border:1px solid #b9d9d4;padding:7px 13px;border-radius:50px;color:#18747a;font-size:12px;text-decoration:none;font-weight:800}
+.hero{padding:28px 0 17px}.hero-in{background:linear-gradient(110deg,#08666f,#0a8f91 75%,#6ac4af);color:white;border-radius:26px;padding:52px clamp(25px,5vw,60px);min-height:305px;position:relative;overflow:hidden}
+.hero-in:after{content:"";position:absolute;width:360px;height:360px;border:35px solid #eafffa29;border-radius:50%;right:-160px;top:-46px}
+.hero h1{position:relative;z-index:1;font-size:clamp(30px,4.6vw,48px);line-height:1.26;letter-spacing:-.7px;margin:11px 0 13px}.hero h1 em{font-style:normal;color:#c4fff2}
+.hero p{position:relative;z-index:1;max-width:640px;font-size:14px;color:#e5fff9;margin:0}
+.hero .overline{color:#bbfff2;font-size:11px;letter-spacing:2px;font-weight:900}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 29px}.pills span{background:#e9f3f1;color:#4b7a7e;padding:6px 13px;border-radius:30px;font-weight:800;font-size:12px}
+.headline{display:flex;align-items:end;justify-content:space-between;gap:8px;margin-bottom:17px}.headline h2{font-size:24px;margin:0}.headline p{margin:3px 0 0;color:var(--muted);font-size:13px}.count{font-size:12px;color:var(--muted);white-space:nowrap}
+.search{width:100%;height:49px;border-radius:13px;background:#fff;border:1px solid #bcd9d4;padding:0 14px;margin:0 0 13px}
+.filters{display:flex;gap:8px;overflow:auto;scrollbar-width:thin;padding:0 0 18px}
+.filter{white-space:nowrap;background:#fff;border:1px solid var(--line);color:#55777b;font-size:13px;font-weight:800;border-radius:50px;padding:8px 16px}
+.filter[aria-pressed=true]{background:var(--a);color:#fff;border-color:var(--a)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px;display:flex;flex-direction:column;min-height:238px;box-shadow:0 8px 28px #19545b10}
+.card .toprow{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.card .emoji{background:#e9f5f2;border-radius:14px;width:49px;height:49px;display:grid;place-items:center;font-size:25px}
+.badge{font-size:11px;background:#f0f4f4;color:#5b7a7f;border-radius:30px;padding:5px 9px;font-weight:800}.badge.med{background:#eef2ff;color:#53629e}
+.card h3{font-size:18px;line-height:1.45;margin:0 0 7px}.card p{font-size:13px;color:var(--muted);margin:0 0 12px;flex:1}
+.card .meta{font-size:11px;color:#809399;margin-bottom:14px}.card .start{background:var(--a);color:#fff;border:0;border-radius:11px;font-size:13px;font-weight:900;padding:11px;width:100%;text-align:center}
+.quiz{background:#fff;border:1px solid var(--line);border-radius:23px;padding:30px;margin:24px auto 0;box-shadow:0 14px 30px #1b4c5613}
+.back{border:0;background:var(--soft);color:var(--a);padding:8px 15px;border-radius:10px;font-size:13px;font-weight:850;margin-bottom:18px}
+.quiz h2{font-size:25px;margin:0 0 9px}.quiz .explain{font-size:13px;color:var(--muted);margin:0 0 13px}
+.notice-inline{background:#edf6f4;border-left:4px solid #36a5a3;padding:13px 15px;border-radius:10px;font-size:12px;color:#45646b;margin:15px 0 18px}
+.progress-line{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin:14px 0 7px}.track{height:9px;background:#e7f0ef;border-radius:20px;overflow:hidden}.track>i{display:block;background:#13a19c;width:0;height:100%;transition:width .2s}
+.question{padding:18px 0;border-bottom:1px solid var(--line);border-left:0;border-top:0;border-right:0;margin:0;min-width:0}
+.question legend{font-size:14px;font-weight:850;line-height:1.6;margin-bottom:13px;padding:0;width:100%}
+.choices{display:flex;flex-wrap:wrap;gap:7px}.choice{display:flex;align-items:center;gap:5px;border:1px solid #dae5e6;border-radius:30px;padding:7px 10px;font-size:12px;cursor:pointer;color:#52666d}
+.choice:has(input:checked){background:#e1f7f0;border-color:#49aaa6;color:#056c70;font-weight:900}.choice input{accent-color:#088489;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.primary{background:var(--a);border:0;border-radius:11px;padding:12px 22px;color:#fff;font-weight:900}.secondary{background:#e8f4f1;border:0;border-radius:11px;padding:12px 19px;color:#11757c;font-weight:850}.error{color:#af3e43;font-size:13px;font-weight:700}
+.result{background:#f3faf7;border:1px solid #d2e9df;border-radius:17px;margin:25px 0 0;padding:23px}.result h3{font-size:22px;margin:0 0 12px}.result p{color:#45666d;font-size:13px}
+.axis{display:grid;grid-template-columns:145px 1fr 42px;gap:12px;align-items:center;margin:15px 0;font-size:12px}.bar{height:11px;border-radius:30px;background:#dbeee8;overflow:hidden}.bar b{display:block;height:100%;background:#158f8c;border-radius:30px}
+.answers-list{padding-left:22px;font-size:13px;color:#42616a}.answers-list li{margin-bottom:6px}
+.disclaimer{background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px;margin:29px auto 43px;font-size:13px;color:#576f77}.disclaimer strong{color:var(--ink)}.disclaimer p{margin:5px 0 0}
+footer{border-top:1px solid var(--line);font-size:12px;color:#7d9399;padding:24px 0 38px}
+@media(max-width:850px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.nav{height:64px}.nav a:last-child{font-size:11px}.hero{padding-top:17px}.hero-in{min-height:270px;padding:31px 24px}.hero h1{font-size:31px}.cards{grid-template-columns:1fr;gap:12px}.card{min-height:205px;padding:19px}.quiz{padding:20px}.quiz h2{font-size:22px}.choice{font-size:11px;padding:7px 9px}.axis{grid-template-columns:91px 1fr 33px;gap:6px}}
 </style>
 </head>
 <body>
-<header class="top"><nav class="container nav"><a href="#" class="brand"><span class="brand-icon">✧</span><span>MediScope<small>メディスコープ</small></span></a><a class="navlink" href="#library">診断一覧を見る ↓</a></nav></header>
+<header><nav class="wrap nav"><a class="brand" href="#home"><i>✧</i><span>MediScope<small>メディスコープ</small></span></a><a href="#library">テスト一覧 ↓</a></nav></header>
 <main>
-<section class="hero"><div class="container"><div class="hero-inner"><div class="hero-text"><p class="eyebrow">PSYCHOLOGY &amp; SELF-DISCOVERY</p><h1>自分を知る、<br><span>新しい入り口。</span></h1><p>ADHD・ASDのセルフチェックから、サイコパシー傾向、ビッグファイブ、16タイプ性格診断まで。心理テストを「医療的なチェック」と「性格・娯楽」に分けて探せます。</p><a href="#library" class="hero-btn">診断・テストを探す ↗</a></div><div class="ring" aria-hidden="true"></div></div></div></section>
-<div class="container"><div class="topnote"><span>🧠 発達特性</span><span>💬 こころ</span><span>🔎 性格・行動</span><span>📖 出典・用途を明示</span></div>
-<section id="library"><div class="section-head"><div><h2>心理テスト＆セルフチェック</h2><p>クリックすると提供元のサイトに移動します。</p></div><span class="count" id="count"></span></div>
-<input id="search" class="search" type="search" autocomplete="off" aria-label="テストを検索" placeholder="キーワードで検索（ADHD、ASD、サイコパス、性格…）">
-<div class="tabs" id="tabs" aria-label="カテゴリー">
-<button class="tab" data-kind="all" aria-pressed="true">すべて</button><button class="tab" data-kind="development" aria-pressed="false">発達特性</button><button class="tab" data-kind="mental" aria-pressed="false">こころ・ストレス</button><button class="tab" data-kind="personality" aria-pressed="false">性格・行動</button><button class="tab" data-kind="sensory" aria-pressed="false">感受性</button>
-</div><div id="cards" class="cards" aria-live="polite"></div></section>
-<aside class="notice"><strong>⚠️ テスト結果について</strong><p>このサイトは第三者の心理テスト・セルフチェックへのリンク集で、診断そのものを行う医療サービスではありません。ADHD・ASDなどのスクリーニング結果だけで診断は確定できません。サイコパシーやHSPのオンラインテストも病名の判定には利用できません。困りごとが続く場合は医療機関などの専門家へ相談してください。外部サイトの利用条件や個人情報の取扱いは、それぞれの提供元をご確認ください。</p></aside>
+<section class="hero" id="home"><div class="wrap"><div class="hero-in"><span class="overline">ORIGINAL SELF-EXPLORATION TESTS</span><h1>自分を知る、<br><em>新しい入り口。</em></h1><p>発達特性やストレスにまつわる日常の困りごと、性格や対人スタイルを自分のペースで振り返る、独自制作の心理・性格セルフチェック集です。</p></div></div></section>
+<div class="wrap">
+<div class="pills"><span>✎ すべて独自作成の質問</span><span>🔒 回答を送信・保存しません</span><span>📱 スマホ対応</span><span>⚕ 医療診断ではありません</span></div>
+<section id="library">
+<div class="headline"><div><h2>チェックを選ぶ</h2><p>質問に答えると、その場で参考結果が表示されます。</p></div><span class="count" id="count"></span></div>
+<input id="search" type="search" class="search" aria-label="テストを検索" placeholder="例：ADHD、ASD、サイコパス、性格、ストレス">
+<div class="filters" aria-label="テストの分類">
+<button class="filter" data-kind="all" aria-pressed="true">すべて</button>
+<button class="filter" data-kind="development" aria-pressed="false">発達特性</button>
+<button class="filter" data-kind="mental" aria-pressed="false">こころ</button>
+<button class="filter" data-kind="personality" aria-pressed="false">性格・行動</button>
+<button class="filter" data-kind="sensitivity" aria-pressed="false">感受性</button>
 </div>
-</main><footer><div class="container">© MediScope · 個人制作の心理・性格テスト案内サイト ／ 特定の提供元との提携・監修関係はありません。</div></footer>
-<script>
-"use strict";
-const tests=[
-{title:"ADHD 成人向けセルフチェック（ASRS）",kind:"development",icon:"🧩",label:"スクリーニング資料",level:"med",source:"Harvard Medical School / WHO関連資料",desc:"成人ADHDのスクリーニング尺度ASRSの原資料。英語版のPDF・解説を確認できます。検査のみで診断はできません。",url:"https://www.hcp.med.harvard.edu/ncs/asrs.php",words:"注意欠如 多動 集中 成人"},
-{title:"ASD 成人の評価とAQ-10",kind:"development",icon:"🔷",label:"診療ガイドライン",level:"med",source:"NICE（英国）",desc:"成人の自閉スペクトラム症の評価に関する公式ガイドライン。AQ-10を含む評価の位置づけを解説。英語。",url:"https://www.nice.org.uk/guidance/cg142/chapter/Recommendations",words:"自閉症 自閉スペクトラム 発達障害"},
-{title:"5分でできるストレスセルフチェック",kind:"mental",icon:"☁️",label:"公的セルフチェック",level:"med",source:"厚生労働省「こころの耳」",desc:"仕事や職場でのストレスについて振り返るためのツール。相談窓口の情報にもアクセスできます。",url:"https://kokoro.mhlw.go.jp/",words:"仕事 ストレス 心の健康 メンタル"},
-{title:"働く人の疲労蓄積度チェック",kind:"mental",icon:"🔋",label:"公的セルフチェック",level:"med",source:"厚生労働省",desc:"疲労の蓄積について振り返る公式のチェックリストを案内。",url:"https://www.mhlw.go.jp/stf/newpage_70718.html",words:"過労 働きすぎ 疲れ"},
-{title:"サイコパシー傾向テスト",kind:"personality",icon:"🎭",label:"心理・性格テスト",level:"ent",source:"IDRlabs（外部・日本語）",desc:"サイコパシー関連の性格傾向を自己申告で見る民間テスト。医学的な診断や他人へのレッテル貼りには使えません。",url:"https://www.idrlabs.com/jp/psychopathy-spectrum/test.php",words:"サイコパス 精神病質"},
-{title:"ビッグファイブ性格診断",kind:"personality",icon:"🌈",label:"性格テスト",level:"ent",source:"Big Five Personality Test",desc:"外向性・協調性・誠実性など5つの特性から性格を見つめるテスト。日本語・登録不要。",url:"https://bigfive-test.com/ja",words:"Big5 五因子 性格 特徴"},
-{title:"16タイプ性格診断",kind:"personality",icon:"✨",label:"性格テスト",level:"ent",source:"16Personalities（外部・日本語）",desc:"自己理解や対人関係のヒントを探す16タイプの診断。医療用検査ではありません。",url:"https://www.16personalities.com/ja/",words:"MBTI風 16personalities 性格タイプ"},
-{title:"HSP 感受性セルフテスト",kind:"sensory",icon:"🍃",label:"特性チェック",level:"ent",source:"The Highly Sensitive Person",desc:"感覚や刺激への敏感さを振り返るセルフテスト。英語。HSPは医学的な病名ではありません。",url:"https://hsperson.com/test/highly-sensitive-test/",words:"繊細 敏感 感受性"}
-];
-const labels={development:"発達特性",mental:"こころ・ストレス",personality:"性格・行動",sensory:"感受性"};
-const cards=document.getElementById("cards"),count=document.getElementById("count"),search=document.getElementById("search");
-let selected="all";
-function render(){
-const q=search.value.trim().toLocaleLowerCase();
-const shown=tests.filter(x=>(selected==="all"||x.kind===selected)&&[x.title,x.desc,x.source,x.words,labels[x.kind]].join(" ").toLocaleLowerCase().includes(q));
-count.textContent=shown.length+" 件";
-cards.replaceChildren();
-if(!shown.length){const el=document.createElement("div");el.className="empty";el.textContent="該当するテストがありません。キーワードを変えてお試しください。";cards.append(el);return}
-for(const x of shown){
-const card=document.createElement("article");card.className="card";
-const top=document.createElement("div");top.className="toprow";
-const icon=document.createElement("span");icon.className="icon";icon.textContent=x.icon;
-const tag=document.createElement("span");tag.className="tag "+x.level;tag.textContent=x.label;top.append(icon,tag);
-const h=document.createElement("h3");h.textContent=x.title;
-const p=document.createElement("p");p.textContent=x.desc;
-const source=document.createElement("div");source.className="source";source.textContent="提供元："+x.source;
-const a=document.createElement("a");a.className="go";a.href=x.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="提供元サイトを見る ↗";
-card.append(top,h,p,source,a);cards.append(card)
-}
-}
-search.addEventListener("input",render);
-document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{selected=btn.dataset.kind;document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed",String(b===btn)));render()}));
-render();
-</script>
+<div id="cards" class="cards"></div>
+</section>
+<section id="quiz" class="quiz" hidden>
+<button id="back" class="back" type="button">← テスト一覧に戻る</button>
+<h2 id="quiz-title"></h2><p id="quiz-desc" class="explain"></p>
+<div class="notice-inline" id="quiz-note"></div>
+<div class="progress-line"><span>回答の進み具合</span><span id="progress-text">0 / 0</span></div><div class="track"><i id="progress-bar"></i></div>
+<form id="form"><div id="questions"></div><div class="actions"><button class="primary" type="submit">結果を見る</button><button class="secondary" type="reset">回答をリセット</button></div><p class="error" id="error" aria-live="polite"></p></form>
+<div id="result" class="result" hidden aria-live="polite"></div>
+</section>
+<aside class="disclaimer"><strong>ご利用前に</strong><p>本サイトのすべての質問・集計は独自制作であり、医療機関・専門学会による妥当性の検証を受けていません。病気の有無・確率・重症度・診断名を判定することはできません。ADHD・ASD、いわゆるサイコパシーやHSPなどをオンラインで断定しないでください。日常生活に支障がある場合は、医療機関・専門の相談窓口へご相談ください。回答はブラウザー内だけで処理し、サーバーへの送信や端末への保存は行いません。</p></aside>
+</div>
+</main><footer><div class="wrap">© MediScope — オリジナル心理・性格チェック。医療診断・認定心理検査ではありません。</div></footer>
+<script src="./app.js?v=2"></script>
 </body></html>
