@@ -149,8 +149,9 @@ button{font-family:inherit;cursor:pointer}
     <p class="small muted">設問は、DSM-5の診断基準の領域をもとにこのアプリ用に作ったオリジナルです。標準化された検査（M-CHAT、ADHD-RSなど）ではありません。回答はこの画面の中だけで集計され、どこにも送信・保存されません。</p>
 
     <label class="agree" for="agree"><input type="checkbox" id="agree"><span>これが医療的な診断ではなく、簡易的なチェックであることを理解しました。</span></label>
-    <p class="small muted" id="start-help" style="margin:0 0 12px">① 上でお子さんの年齢を選ぶ → ② 「診断ではないことへの理解」にチェックを入れると、開始ボタンを押せます。</p>
-    <button class="btn" id="start" disabled>チェックを始める</button>
+    <p class="small muted" id="start-help" style="margin:0 0 12px">年齢を選び、確認欄にチェックしてから開始してください。</p>
+    <button class="btn" id="start" type="button" aria-describedby="start-help">チェックを始める →</button>
+    <p id="start-error" role="alert" aria-live="assertive" style="color:#ac4c33;font-size:14px;margin:12px 0 0;font-weight:700"></p>
   </section>
 
   <!-- quiz -->
@@ -248,7 +249,13 @@ const steps = [...ITEMS.map((it,i)=>({kind:"item", i})), ...CONTEXT.map((c,i)=>(
 const $ = id => document.getElementById(id);
 let ans = new Array(steps.length).fill(null), cur = 0, lock = false, age = null;
 function show(id){ ["intro","quiz","result"].forEach(s => $(s).hidden = s!==id); window.scrollTo(0,0); }
-function updateStart(){ $("start").disabled = !($("agree").checked && age!==null); }
+function updateStart(){
+  const message = $("start-help");
+  if (age===null) message.textContent = "① お子さんの年齢を選択してください。② 確認欄にチェックすると準備完了です。";
+  else if (!$("agree").checked) message.textContent = "年齢は選択済みです。「診断ではないことへの理解」にチェックを入れてください。";
+  else message.textContent = "準備完了です。「チェックを始める」を押してください。";
+  $("start-error").textContent = "";
+}
 
 document.querySelectorAll(".age").forEach(b => b.onclick = () => {
   age = Number(b.dataset.age);
@@ -256,7 +263,19 @@ document.querySelectorAll(".age").forEach(b => b.onclick = () => {
   updateStart();
 });
 $("agree").onchange = updateStart;
-$("start").onclick = () => { ans.fill(null); cur = 0; show("quiz"); render(); };
+$("start").onclick = () => {
+  if(age===null){
+    $("start-error").textContent = "お子さんの年齢を選択してください（3〜5歳／6〜8歳／9〜12歳）。";
+    document.querySelector(".ages").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+  if(!$("agree").checked){
+    $("start-error").textContent = "このチェックが医学的な診断ではないことをご確認のうえ、チェックを入れてください。";
+    $("agree").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
+  ans.fill(null); cur = 0; lock = false; show("quiz"); render();
+};
 $("back").onclick = () => { if(cur>0){ cur--; render(); } };
 $("retry").onclick = () => { $("agree").checked = false; updateStart(); show("intro"); };
 
